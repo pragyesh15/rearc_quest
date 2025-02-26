@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quest-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quest-app
+  template:
+    metadata:
+      labels:
+        app: quest-app
+    spec:
+      containers:
+      - name: quest-app
+        image: ${DOCKER_REGISTRY}/quest-app:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: SECRET_WORD
+          valueFrom:
+            secretKeyRef:
+              name: quest-secret
+              key: SECRET_WORD
