@@ -19,7 +19,7 @@ module "vpc" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "20.0.0"  # Updated version for compatibility
+  version = "20.16.0"  # Updated version for compatibility
 
   cluster_name    = "quest-cluster"
   cluster_version = "1.21"
