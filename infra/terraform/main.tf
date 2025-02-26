@@ -37,4 +37,8 @@ module "eks" {
       capacity_type  = "ON_DEMAND"
     }
   }
+  cluster_enabled_log_types = null
+  enable_irsa = false
+  cluster_encryption_config = []
+  cloudwatch_log_group_retention_in_days = null
 }
