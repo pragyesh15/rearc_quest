@@ -1,25 +1,27 @@
-const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const express = require('express');
 const app = express();
-const httpsPort = process.env.HTTPS_PORT || 443;
+const httpPort = process.env.HTTP_PORT || 80;
 
 // Read SECRET_WORD from environment variable
 global.MY_SECRET_WORD = 'default-secret';
 
-// Load the self-signed certificate and private key
-const options = {
-  key: fs.readFileSync('/app/certs/private.key'),
-  cert: fs.readFileSync('/app/certs/certificate.crt')
-};
+// Create an HTTP server
+// http.createServer(options, app).listen(httpPort, () => {
+//   console.log(`Secret Word as process ENV: ${process.env.SECRET_WORD}`);
+//   console.log(`Secret Word: ${global.MY_SECRET_WORD}`);
+//   global.MY_SECRET_WORD = process.env.SECRET_WORD
+//   console.log(`Secret Word after update: ${global.MY_SECRET_WORD}`);
+//   console.log(`HTTPS server running on port ${httpPort}`);
+// });
 
-// Create an HTTPS server
-https.createServer(options, app).listen(httpsPort, () => {
+app.listen(httpPort, () => {
   console.log(`Secret Word as process ENV: ${process.env.SECRET_WORD}`);
   console.log(`Secret Word: ${global.MY_SECRET_WORD}`);
   global.MY_SECRET_WORD = process.env.SECRET_WORD
   console.log(`Secret Word after update: ${global.MY_SECRET_WORD}`);
-  console.log(`HTTPS server running on port ${httpsPort}`);
+  console.log(`App listening at http://localhost:${httpPort}`);
 });
 
 app.get('/', (req, res) => {
