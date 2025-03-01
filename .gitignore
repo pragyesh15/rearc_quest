@@ -3,3 +3,7 @@
 *.tfstate
 *.tfstate.backup
 .terraform.lock.hcl
+.certs/
+*.crt
+*.csr
+*.key

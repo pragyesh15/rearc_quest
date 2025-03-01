@@ -12,4 +12,5 @@ SECRET_WORD=$(curl -s http://localhost:80/ | grep -oP 'SECRET_WORD: \K.*')
 # Restart the app with the SECRET_WORD environment variable
 pkill node
 
+#Pass the SECRET_WORD to the app as an environment variable and start the app
 SECRET_WORD=$SECRET_WORD node index.js
