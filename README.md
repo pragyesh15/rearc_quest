@@ -104,15 +104,15 @@ Execution Steps
 Proof Of Completion
 ===================
 Currently, I've destroyed the AWS infrastructure due to cost, but if you follow the steps above, all URLs will be accessible. I am attaching screenshots for each task below: 
-1. Public cloud & index page (contains the secret word) - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/ 
+1. **Public cloud & index page** (contains the secret word) - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/ 
 ![alt text](images/completion-proof/Base_url.png)
-2. Docker check - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/docker
+2. **Docker check** - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/docker
 ![alt text](images/completion-proof/Docker_url.png)
-3. Secret Word check - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/secret_word
+3. **Secret Word check** - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/secret_word
 ![alt text](images/completion-proof/secret_word_url.png)
-4. Load Balancer check - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/loadbalanced
+4. **Load Balancer check** - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/loadbalanced
 ![alt text](images/completion-proof/loadbalanced_url.png)
-5. TLS check - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/tls
+5. **TLS check** - http://quest-app-load-balancer-903671732.ap-south-1.elb.amazonaws.com/tls
 ![alt text](images/completion-proof/tls_url.png)
 
 Given more time, I would improve
